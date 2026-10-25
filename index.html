@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-PH" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booth Buddy | Pop-Up Events & Shared Bazaar Booths</title>
+  <meta name="description" content="Join curated pop-up events by Booth Buddy. Book a solo booth or share a stall with a verified, non-competing brand to split rental costs, plus rent setup supplies in one click." />
+
+  <!-- Social Media Preview Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Booth Buddy — Pop-Up Events Made Simple, Friendly & Affordable" />
+  <meta property="og:description" content="Book a solo bazaar booth or split costs with a verified Booth Buddy. Tents, tables, and lights available in one click." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Custom Booth Buddy Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23F43F5E'/%3E%3Cstop offset='100%25' stop-color='%233B82F6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='10' fill='url(%23g)'/%3E%3Cpath d='M5 15L8 8H19L22 15H5Z' fill='%23FFFFFF'/%3E%3Cpath d='M14 15L17 8H28L31 15H14Z' fill='%23E0F2FE'/%3E%3Crect x='7' y='15' width='12' height='13' rx='2' fill='%23FFFFFF'/%3E%3Crect x='17' y='15' width='12' height='13' rx='2' fill='%23E0F2FE'/%3E%3C/svg%3E" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-rose-50/40 via-white to-sky-50/40 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="bg-white/90 backdrop-blur-md border-b border-rose-100 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Custom Booth Buddy Logo -->
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-500 via-pink-500 to-sky-500 p-0.5 shadow-md shadow-rose-500/20">
+          <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
+            <svg class="w-7 h-7" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 14L7 7H19L22 14H4Z" fill="#F43F5E"/>
+              <path d="M14 14L17 7H29L32 14H14Z" fill="#0EA5E9" fill-opacity="0.9"/>
+              <rect x="6" y="14" width="14" height="14" rx="2" stroke="#F43F5E" stroke-width="2.2" fill="white"/>
+              <rect x="16" y="14" width="14" height="14" rx="2" stroke="#0EA5E9" stroke-width="2.2" fill="white" fill-opacity="0.95"/>
+              <path d="M18 19.5C18 18.67 18.67 18 19.5 18C20.33 18 21 18.67 21 19.5C21 21 18 22.5 18 22.5C18 22.5 15 21 15 19.5C15 18.67 15.67 18 16.5 18C17.33 18 18 18.67 18 19.5Z" fill="#F43F5E"/>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-rose-500 to-sky-600 bg-clip-text text-transparent">Booth Buddy</span>
+          <span class="block text-[11px] font-medium text-slate-400">Your Pop-Up Event Partner</span>
+        </div>
+      </a>
+
+      <!-- Simple, Friendly Navigation Titles -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+        <a href="#about" class="hover:text-rose-500 transition">About</a>
+        <a href="#how-it-works" class="hover:text-rose-500 transition">How It Works</a>
+        <a href="#events" class="hover:text-rose-500 transition">Events</a>
+        <a href="#matcher" class="hover:text-rose-500 transition">Booth Matcher</a>
+        <a href="#supplies" class="hover:text-rose-500 transition">Booth Supplies</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <button onclick="openMyBookingModal()" class="text-xs sm:text-sm font-bold text-sky-600 hover:text-sky-700 px-3.5 py-2 rounded-full border border-sky-200 bg-sky-50/60 transition">
+          My Booking
+        </button>
+        <a href="#get-started" class="bg-gradient-to-r from-rose-500 to-sky-500 hover:from-rose-600 hover:to-sky-600 text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full shadow-md shadow-rose-500/20 transition">
+          Get Started →
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="flex-1">
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative overflow-hidden py-14 sm:py-20 px-6">
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-rose-200/35 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-12 -right-24 w-96 h-96 bg-sky-200/35 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-white border border-rose-200 shadow-sm text-rose-500 text-xs font-bold px-3.5 py-1.5 rounded-full">
+            <span>✨ Curated Pop-Up Events</span>
+            <span>•</span>
+            <span class="text-sky-600">Go Solo or Share With a Buddy</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Grow Your Small Brand at Our Next Pop-Up—<span class="bg-gradient-to-r from-rose-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">Solo or With a Booth Buddy.</span>
+          </h1>
+
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+            We organize vibrant, crowd-favorite pop-up bazaars designed for growing local businesses. Book a full booth on your own, or use our <strong>Booth Buddy Matcher</strong> to share a space and split rental costs with a verified, non-competing brand.
+          </p>
+
+          <div class="flex flex-wrap gap-3.5 pt-2">
+            <a href="#get-started" class="bg-gradient-to-r from-rose-500 to-sky-500 hover:from-rose-600 hover:to-sky-600 text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-rose-500/25 transition">
+              Get Started →
+            </a>
+            <a href="#events" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-bold px-6 py-3.5 rounded-full shadow-sm transition">
+              Explore Upcoming Events
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80">
+            <div>
+              <div class="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-rose-500 to-sky-500 bg-clip-text text-transparent">Lighter Costs</div>
+              <div class="text-xs text-slate-500 mt-0.5">Split booth fees when you share with a buddy</div>
+            </div>
+            <div>
+              <div class="text-lg sm:text-xl font-extrabold text-slate-800">Zero Rivals</div>
+              <div class="text-xs text-slate-500 mt-0.5">Never paired with the same product category</div>
+            </div>
+            <div>
+              <div class="text-lg sm:text-xl font-extrabold text-sky-600">Easy Setup</div>
+              <div class="text-xs text-slate-500 mt-0.5">Add tents, tables & lights in one click</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Visual Collage -->
+        <div class="lg:col-span-6">
+          <div class="bg-white rounded-3xl p-5 shadow-xl shadow-rose-500/10 border border-rose-100 space-y-5">
+            <div class="relative h-60 sm:h-64 rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1000&q=80" alt="Vibrant Pop-Up Market" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
+                <span class="bg-rose-500 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full w-fit mb-1.5">All-In-One Bazaar Experience</span>
+                <p class="text-xl font-extrabold">Curated Venues • Happy Crowds • Supportive Community</p>
+                <p class="text-xs text-white/90">Fashion, Food, Drinks, Beauty, Arts & General Merch</p>
+              </div>
+            </div>
+
+            <!-- Visual Buddy Pairing Example -->
+            <div class="bg-gradient-to-r from-rose-50/70 via-white to-sky-50/70 rounded-2xl p-4 border border-rose-100">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold text-rose-600">🤝 Sample Shared Booth Match</span>
+                <span class="bg-emerald-100 text-emerald-700 text-[11px] font-bold px-2.5 py-0.5 rounded-full">✓ Complementary Brands</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
+                  <span class="text-[10px] font-bold uppercase text-rose-500">Buddy A (Left Side)</span>
+                  <div class="font-extrabold text-sm text-slate-800 mt-0.5">🧋 Sunny Sips</div>
+                  <div class="text-slate-500">Category: Beverage Only</div>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-sky-200 shadow-sm">
+                  <span class="text-[10px] font-bold uppercase text-sky-600">Buddy B (Right Side)</span>
+                  <div class="font-extrabold text-sm text-slate-800 mt-0.5">🥐 Butter & Crumb</div>
+                  <div class="text-slate-500">Category: Food Only (Pastries)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT & WHY BRANDS SHOULD SWITCH ================= -->
+    <section id="about" class="py-16 px-6 bg-white border-y border-slate-100">
+      <div class="max-w-6xl mx-auto space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-500">About Booth Buddy</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Why Small Brands Should Switch to Booth Buddy</h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            We organize our own pop-up events from start to finish—scouting great venues, promoting the bazaar, and preparing booth supplies so you can focus on selling. Whether you want a full booth to yourself or want to split the cost with a partner, we make popping up stress-free.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Traditional Bazaars -->
+          <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200/80 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">✕</div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-500">The Old Way</span>
+                <h3 class="text-lg font-extrabold text-slate-800">Joining Traditional Bazaars</h3>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm text-slate-600">
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-slate-100">
+                <span class="text-xl">💸</span>
+                <div><strong class="text-slate-800">High Solo Booth Rentals:</strong> Paying for a full space alone can be too heavy for small and starting brands.</div>
+              </div>
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-slate-100">
+                <span class="text-xl">😰</span>
+                <div><strong class="text-slate-800">Risky Social Media Roommates:</strong> Searching for a booth-sharer in random groups often leads to last-minute backing out.</div>
+              </div>
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-slate-100">
+                <span class="text-xl">⚔️</span>
+                <div><strong class="text-slate-800">Placed Beside Direct Competitors:</strong> Ending up right next to another merchant selling the exact same products.</div>
+              </div>
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-slate-100">
+                <span class="text-xl">🚚</span>
+                <div><strong class="text-slate-800">Hassle Bringing Your Own Setup:</strong> Contacting separate outside suppliers just to rent tables, tents, and lights.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- With Booth Buddy -->
+          <div class="bg-gradient-to-br from-rose-50/70 via-white to-sky-50/70 rounded-3xl p-7 border-2 border-rose-200 shadow-lg shadow-rose-500/5 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-r from-rose-500 to-sky-500 text-white flex items-center justify-center font-bold text-lg">✓</div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-600">The Better Way</span>
+                <h3 class="text-lg font-extrabold text-slate-900">Popping Up With Booth Buddy</h3>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm text-slate-700">
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-rose-100 shadow-sm">
+                <span class="text-xl">🤝</span>
+                <div><strong class="text-slate-900">Share a Booth & Cut Costs:</strong> Book a Solo Booth or split rental expenses with a matched Booth Buddy.</div>
+              </div>
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-rose-100 shadow-sm">
+                <span class="text-xl">🛡️</span>
+                <div><strong class="text-slate-900">Screened & Verified Community:</strong> Our team manually checks every merchant so you always partner with legit brands.</div>
+              </div>
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-rose-100 shadow-sm">
+                <span class="text-xl">✨</span>
+                <div><strong class="text-slate-900">Smart Category Pairing:</strong> We pair complementary products (like Drinks + Snacks, or Clothing + Accessories) and block rivals.</div>
+              </div>
+              <div class="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-rose-100 shadow-sm">
+                <span class="text-xl">⛺</span>
+                <div><strong class="text-slate-900">One-Click Booth Supplies:</strong> Rent canopies, folding tables, chairs, and warm spotlights right on our website.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS (4 SIMPLE STEPS) ================= -->
+    <section id="how-it-works" class="py-16 px-6 max-w-7xl mx-auto space-y-10">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-sky-600">Easy Step-by-Step Process</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">How It Works</h2>
+        <p class="text-sm text-slate-500 mt-2">From signing up to meeting your Booth Buddy on event day—everything happens in four simple steps.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-3xl border border-rose-100 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-2xl bg-rose-100 text-rose-600 font-extrabold flex items-center justify-center">1</div>
+          <h3 class="font-extrabold text-base text-slate-900">Create Your Profile</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Fill out your brand details, choose your product category, and upload your basic business permit or ID for our team's review.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-rose-100 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-2xl bg-pink-100 text-pink-600 font-extrabold flex items-center justify-center">2</div>
+          <h3 class="font-extrabold text-base text-slate-900">Pick an Event & Option</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Choose from our upcoming pop-up events. Select a <strong>Solo Booth</strong> or pick <strong>Booth Buddy</strong> to split the space and cost.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-sky-100 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-2xl bg-sky-100 text-sky-600 font-extrabold flex items-center justify-center">3</div>
+          <h3 class="font-extrabold text-base text-slate-900">Add Booth Supplies</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Select any optional setup supplies you need—like a white canopy tent, folding table, or warm spotlights—and complete your booking.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-sky-100 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-600 font-extrabold flex items-center justify-center">4</div>
+          <h3 class="font-extrabold text-base text-slate-900">Meet Your Buddy & Sell!</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Once confirmed, open <strong>My Booking</strong> to see your matched Booth Buddy's brand profile, coordinate your setup, and enjoy the event!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UPCOMING EVENTS (DYNAMICALLY SYNCED WITH /ADMIN) ================= -->
+    <section id="events" class="py-16 px-6 bg-white border-y border-slate-100">
+      <div class="max-w-7xl mx-auto space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-500">Official Event Calendar</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Upcoming Booth Buddy Pop-Ups</h2>
+            <p class="text-sm text-slate-500 mt-1">All events are organized directly by our team. <em>Booth rates vary depending on the venue location and event inclusions.</em></p>
+          </div>
+          <button onclick="renderLiveEvents()" class="inline-flex items-center gap-2 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 font-bold text-xs px-4 py-2.5 rounded-full transition self-start sm:self-auto">
+            <span>↻ Refresh Availability</span>
+          </button>
+        </div>
+
+        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- ================= INTERACTIVE BOOTH BUDDY MATCHER (FOR PRESENTATION DEMO) ================= -->
+    <section id="matcher" class="py-16 px-6 max-w-7xl mx-auto space-y-8">
+      <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-sky-500 rounded-3xl p-8 text-white shadow-xl space-y-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Interactive Matchmaking Preview</span>
+            <h2 class="text-3xl font-extrabold mt-2">See How Booth Buddy Matching Works</h2>
+            <p class="text-xs sm:text-sm text-white/90 mt-1">Click any product category below to see how our system pairs complementary brands and automatically blocks direct competitors:</p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-bold">
+            <button onclick="filterMatcher('Beverage Only')" class="bg-white text-rose-600 px-4 py-2.5 rounded-full shadow-sm hover:bg-rose-50 transition">🧋 Beverage Only</button>
+            <button onclick="filterMatcher('Food Only')" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2.5 rounded-full transition">🥐 Food Only</button>
+            <button onclick="filterMatcher('Fashion & Apparel')" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2.5 rounded-full transition">👗 Fashion & Apparel</button>
+            <button onclick="filterMatcher('General Merch & Anik-Aniks')" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2.5 rounded-full transition">🎀 General Merch</button>
+          </div>
+        </div>
+
+        <div id="matcher-results" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+      </div>
+    </section>
+
+    <!-- ================= BOOTH SETUP SUPPLIES (WITH PHOTOS & SIMPLE LABELS) ================= -->
+    <section id="supplies" class="py-16 px-6 bg-white border-t border-slate-100">
+      <div class="max-w-7xl mx-auto space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600">Everything You Need to Set Up</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Booth Setup Supplies</h2>
+            <p class="text-sm text-slate-500 mt-1">Travel light! Select any supplies you need when booking your booth and our team will have them ready at your stall before ingress.</p>
+          </div>
+          <a href="#get-started" class="bg-gradient-to-r from-rose-500 to-sky-500 text-white font-bold text-xs px-5 py-3 rounded-full shadow-sm self-start sm:self-auto">
+            Add Supplies to My Booking →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-rose-300 transition">
+            <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=600&q=80" alt="White Canopy Tent" class="w-full h-44 object-cover" />
+            <div class="p-5 space-y-1.5">
+              <h3 class="font-extrabold text-base text-slate-900">White Canopy Tent</h3>
+              <p class="text-xs text-slate-500">Clean, sturdy pop-up canopy tent set up right at your booth space.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-rose-300 transition">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Folding Display Table" class="w-full h-44 object-cover" />
+            <div class="p-5 space-y-1.5">
+              <h3 class="font-extrabold text-base text-slate-900">Folding Display Table</h3>
+              <p class="text-xs text-slate-500">Commercial display table with a neat fitted table cover for your products.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-rose-300 transition">
+            <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80" alt="Warm Booth Spotlights" class="w-full h-44 object-cover" />
+            <div class="p-5 space-y-1.5">
+              <h3 class="font-extrabold text-base text-slate-900">Warm Booth Spotlights</h3>
+              <p class="text-xs text-slate-500">Clip-on warm LED lights to make your merchandise look bright and inviting.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-rose-300 transition">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Display Rack and Chairs" class="w-full h-44 object-cover" />
+            <div class="p-5 space-y-1.5">
+              <h3 class="font-extrabold text-base text-slate-900">Display Rack & Extra Chairs</h3>
+              <p class="text-xs text-slate-500">Heavy-duty garment rack for clothing brands or extra merchant chairs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GET STARTED / MERCHANT SIGN UP & BOOKING FORM ================= -->
+    <section id="get-started" class="py-16 px-6 bg-gradient-to-b from-rose-50/50 to-sky-50/50 border-t border-rose-100">
+      <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-rose-100 shadow-xl overflow-hidden">
+        <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-sky-500 text-white p-7 sm:p-8">
+          <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Get Started</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Sign Up & Book Your Booth</h2>
+          <p class="text-xs sm:text-sm text-white/90 mt-1">Tell us about your brand, choose your event and booth option, and upload your basic business permit or ID for our team's review.</p>
+        </div>
+
+        <form id="merchant-booking-form" onsubmit="submitMerchantBooking(event)" class="p-6 sm:p-8 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Brand / Shop Name *</label>
+              <input type="text" id="f-brand" required placeholder="e.g., Sunny Sips Coffee" class="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:border-rose-400 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Owner / Contact Person *</label>
+              <input type="text" id="f-owner" required placeholder="Enter your full name" class="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:border-rose-400 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number (Viber / SMS) *</label>
+              <input type="tel" id="f-phone" required placeholder="09XX XXX XXXX" class="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:border-rose-400 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Instagram / TikTok / Facebook Link *</label>
+              <input type="text" id="f-social" required placeholder="@yourbrand" class="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:border-rose-400 outline-none" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Primary Product Category *</label>
+              <select id="f-category" class="w-full border-2 border-rose-200 rounded-xl px-3 py-2.5 text-sm font-semibold bg-rose-50/20">
+                <option value="Beverage Only (Coffee, Matcha, Drinks)">Beverage Only (Coffee, Matcha, Drinks)</option>
+                <option value="Food Only (Pastries, Snacks, Desserts)">Food Only (Pastries, Snacks, Desserts)</option>
+                <option value="Food & Beverage (Combo Meals, Snacks + Drinks)">Food & Beverage (Snacks + Drinks)</option>
+                <option value="Fashion & Apparel (Clothing, Activewear, Thrift)">Fashion & Apparel (Clothing, Thrift)</option>
+                <option value="General Merch & Anik-Aniks (Keychains, Stickers, Gifts)">General Merch & Anik-Aniks</option>
+                <option value="Footwear, Bags & Leather Goods">Footwear, Bags & Leather Goods</option>
+                <option value="Jewelry, Charms & Fashion Accessories">Jewelry, Charms & Accessories</option>
+                <option value="Beauty, Skincare, Cosmetics & Press-On Nails">Beauty, Cosmetics & Press-On Nails</option>
+                <option value="Perfumes, Scented Candles & Home Fragrances">Perfumes & Scented Candles</option>
+                <option value="Arts, Crafts, Crochet & Stationery">Arts, Crafts, Crochet & Stationery</option>
+                <option value="Gadgets, Phone Cases & Tech Accessories">Gadgets & Tech Accessories</option>
+                <option value="Pet Apparel, Treats & Accessories">Pet Apparel & Accessories</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Choose Upcoming Event *</label>
+              <select id="f-event" onchange="updateBookingTotal()" class="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold"></select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Booth Option *</label>
+              <select id="f-mode" onchange="updateBookingTotal()" class="w-full border border-sky-200 rounded-xl px-3 py-2.5 text-sm font-bold text-sky-800 bg-sky-50/40">
+                <option value="Shared Booth Buddy">🤝 Share with a Booth Buddy</option>
+                <option value="Solo Booth">⛺ Solo Booth (Full Space)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Optional Supplies Selection -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold text-slate-700">Select Optional Booth Supplies Needed for Your Setup:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+              <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer">
+                <span class="flex items-center gap-2"><input type="checkbox" class="supply-chk accent-rose-500" value="White Canopy Tent" data-price="400" onchange="updateBookingTotal()" checked /> ⛺ White Canopy Tent</span>
+                <strong class="text-rose-600">+₱400</strong>
+              </label>
+              <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer">
+                <span class="flex items-center gap-2"><input type="checkbox" class="supply-chk accent-rose-500" value="Folding Display Table" data-price="300" onchange="updateBookingTotal()" checked /> 🪑 Folding Display Table</span>
+                <strong class="text-rose-600">+₱300</strong>
+              </label>
+              <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer">
+                <span class="flex items-center gap-2"><input type="checkbox" class="supply-chk accent-rose-500" value="Warm Booth Spotlights" data-price="250" onchange="updateBookingTotal()" /> 💡 Warm Booth Spotlights</span>
+                <strong class="text-rose-600">+₱250</strong>
+              </label>
+              <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer">
+                <span class="flex items-center gap-2"><input type="checkbox" class="supply-chk accent-rose-500" value="Display Rack & Extra Chairs" data-price="200" onchange="updateBookingTotal()" /> 🧥 Display Rack & Extra Chairs</span>
+                <strong class="text-rose-600">+₱200</strong>
+              </label>
+            </div>
+          </div>
+
+          <!-- Simple Document Upload (Manual Admin Check) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Upload Business Permit (BIR / DTI) or Valid ID *</label>
+              <input type="file" id="f-doc" class="w-full text-xs text-slate-600 border border-dashed border-rose-200 rounded-xl p-2.5 bg-rose-50/20" />
+              <span class="text-[11px] text-slate-400">Our team will check your document manually to verify your brand.</span>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Payment Option *</label>
+              <select id="f-payment" class="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                <option value="GCash">GCash</option>
+                <option value="Maya">Maya</option>
+                <option value="GoTyme / Bank Transfer">GoTyme / Bank Transfer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-slate-300">Estimated Total for Selected Event & Supplies:</span>
+              <div id="booking-total-display" class="text-2xl font-extrabold text-rose-400">₱0.00</div>
+              <span class="text-[11px] text-sky-300">Rates are based on your selected event venue and optional booth supplies.</span>
+            </div>
+            <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-sky-500 hover:from-rose-600 hover:to-sky-600 text-white font-extrabold text-sm px-8 py-4 rounded-full shadow-lg transition">
+              Complete Booking & See My Buddy →
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MY BOOKING (CONFIRMED & BUDDY REVEAL MODAL) ================= -->
+  <div id="booking-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-rose-100 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+        <div>
+          <span class="bg-emerald-100 text-emerald-700 text-xs font-extrabold px-3 py-1 rounded-full">✓ BOOKING & PARTICIPATION STATUS</span>
+          <h3 class="text-2xl font-extrabold text-slate-900 mt-2">My Booth Booking & Matched Buddy</h3>
+        </div>
+        <button onclick="closeMyBookingModal()" class="text-slate-400 hover:text-slate-700 font-bold text-xl">✕</button>
+      </div>
+
+      <div id="modal-booking-content" class="space-y-5 text-xs"></div>
+
+      <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+        <a href="/admin" class="text-xs font-bold text-rose-500 hover:underline">Go to Organizer Admin (/admin) ↗</a>
+        <button onclick="closeMyBookingModal()" class="bg-slate-900 text-white font-bold text-xs px-6 py-2.5 rounded-full">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-900 text-slate-300 py-12 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
+      <div class="space-y-2">
+        <span class="font-extrabold text-lg text-white">Booth Buddy</span>
+        <p class="text-slate-400 leading-relaxed">Pop-up events and smart booth-sharing built for small brands and local entrepreneurs.</p>
+      </div>
+      <div class="space-y-1.5">
+        <div class="font-bold text-white uppercase tracking-wider">Pages</div>
+        <ul class="space-y-1">
+          <li><a href="#about" class="hover:text-rose-400">About</a></li>
+          <li><a href="#how-it-works" class="hover:text-rose-400">How It Works</a></li>
+          <li><a href="#events" class="hover:text-rose-400">Events</a></li>
+          <li><a href="#supplies" class="hover:text-rose-400">Booth Supplies</a></li>
+        </ul>
+      </div>
+      <div class="space-y-1.5">
+        <div class="font-bold text-white uppercase tracking-wider">Contact Us</div>
+        <p class="text-slate-400">✉️ hello@boothbuddy.ph</p>
+        <p class="text-slate-400">📱 Viber / SMS: 0917 880 4521</p>
+        <p class="text-slate-400">📸 Instagram: @boothbuddy.ph</p>
+      </div>
+      <div class="space-y-2">
+        <div class="font-bold text-white uppercase tracking-wider">Organizer Portal</div>
+        <p class="text-slate-400">For Booth Buddy event organizers:</p>
+        <a href="/admin" class="inline-block bg-slate-800 hover:bg-slate-700 text-rose-400 font-bold px-4 py-2 rounded-xl border border-slate-700">
+          🔒 Admin Login (/admin) →
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE SCRIPT (CONNECTED TO /ADMIN) ================= -->
+  <script>
+    const DEFAULT_EVENTS = [
+      {
+        id: 'evt-1',
+        dates: 'Nov 14–15, 2026',
+        title: 'The Weekend Courtyard Collective',
+        venue: 'Open-Air Lifestyle Courtyard',
+        buddyPackage: 3000,
+        soloPackage: 4400,
+        slotsLeft: 6,
+        status: 'OPEN',
+        img: 'https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'evt-2',
+        dates: 'Nov 28–29, 2026',
+        title: 'Holiday Makers & Lifestyle Fair',
+        venue: 'Indoor Air-Conditioned Activity Hall',
+        buddyPackage: 3600,
+        soloPackage: 5400,
+        slotsLeft: 3,
+        status: 'ALMOST FULL',
+        img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'evt-3',
+        dates: 'Dec 12–13, 2026',
+        title: 'Merry Makers Pop-Up Town',
+        venue: 'Central Community Plaza',
+        buddyPackage: 3400,
+        soloPackage: 5000,
+        slotsLeft: 10,
+        status: 'OPEN',
+        img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    const DEFAULT_BOOKINGS = [
+      {
+        id: 'BB-2026-101',
+        brand: 'Sunny Sips Specialty Coffee',
+        owner: 'Camille Santos',
+        phone: '0917 555 0192',
+        social: '@sunnysips.ph',
+        category: 'Beverage Only (Coffee, Matcha, Drinks)',
+        eventTitle: 'The Weekend Courtyard Collective (Nov 14–15)',
+        mode: 'Shared Booth Buddy',
+        stall: 'Stall A-01',
+        supplies: ['White Canopy Tent', 'Folding Display Table'],
+        total: 3700,
+        status: 'Confirmed & Paid ✓',
+        buddyBrand: 'Butter & Crumb Bakehouse',
+        buddyCategory: 'Food Only (Pastries & Croissants)',
+        buddyContact: 'Mia Villanueva (@butterandcrumb.ph)'
+      }
+    ];
+
+    function initStorage() {
+      if (!localStorage.getItem('bb_clean_events')) {
+        localStorage.setItem('bb_clean_events', JSON.stringify(DEFAULT_EVENTS));
+      }
+      if (!localStorage.getItem('bb_clean_bookings')) {
+        localStorage.setItem('bb_clean_bookings', JSON.stringify(DEFAULT_BOOKINGS));
+      }
+    }
+
+    function renderLiveEvents() {
+      initStorage();
+      const events = JSON.parse(localStorage.getItem('bb_clean_events'));
+      const grid = document.getElementById('events-grid');
+      const select = document.getElementById('f-event');
+
+      grid.innerHTML = events.map(ev => {
+        const badgeClass = ev.status === 'OPEN'
+          ? 'bg-emerald-100 text-emerald-700'
+          : ev.status === 'ALMOST FULL'
+          ? 'bg-amber-100 text-amber-800'
+          : 'bg-rose-100 text-rose-700';
+
+        return `
+          <article class="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative h-44">
+                <img src="${ev.img}" alt="${ev.title}" class="w-full h-full object-cover" />
+                <span class="absolute top-3 left-3 bg-white/95 text-rose-600 text-[11px] font-extrabold px-3 py-1 rounded-full shadow">${ev.dates}</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-lg font-extrabold text-slate-900">${ev.title}</h3>
+                <p class="text-xs text-slate-500">📍 ${ev.venue}</p>
+                <div class="bg-rose-50/50 rounded-2xl p-3.5 border border-rose-100 text-xs space-y-1.5">
+                  <div class="flex justify-between"><span>Shared Booth Buddy (2 Days):</span><strong class="text-rose-600">₱${ev.buddyPackage.toLocaleString()}</strong></div>
+                  <div class="flex justify-between"><span>Solo Booth (2 Days):</span><strong class="text-slate-800">₱${ev.soloPackage.toLocaleString()}</strong></div>
+                  <div class="text-[11px] text-slate-400">Rates set for this venue's space & setup</div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-extrabold px-2.5 py-1 rounded-full ${badgeClass}">● ${ev.status} (${ev.slotsLeft} stalls left)</span>
+              <a href="#get-started" class="text-xs font-extrabold text-rose-600 hover:underline">Book Stall →</a>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      select.innerHTML = events.map(ev => `
+        <option value="${ev.id}" data-solo="${ev.soloPackage}" data-buddy="${ev.buddyPackage}">
+          ${ev.title} (${ev.dates})
+        </option>
+      `).join('');
+
+      updateBookingTotal();
+    }
+
+    const MATCHER_DATA = {
+      'Beverage Only': [
+        { stall: 'Stall A-01', status: '98% MATCH', partner: 'Butter & Crumb Bakehouse', cat: '🥐 Food Only (Pastries)', note: '✓ Coffee + Pastries = Perfect Pair!', type: 'match' },
+        { stall: 'Stall A-02', status: 'UNAVAILABLE', partner: 'Uji Matcha Bar', cat: '🧋 Beverage Only', note: '✗ Blocked: Same Beverage Category', type: 'blocked' },
+        { stall: 'Stall A-03', status: 'OPEN STALL', partner: 'Empty Booth Space', cat: '✨ Open for Solo or First Buddy', note: 'Available to reserve now', type: 'open' }
+      ],
+      'Food Only': [
+        { stall: 'Stall A-05', status: '98% MATCH', partner: 'Brewed Awakening Coffee', cat: '🧋 Beverage Only', note: '✓ Pastries + Cold Brew Combo!', type: 'match' },
+        { stall: 'Stall A-01', status: 'UNAVAILABLE', partner: 'Butter & Crumb Bakehouse', cat: '🥐 Food Only', note: '✗ Blocked: Same Food Category', type: 'blocked' },
+        { stall: 'Stall A-06', status: 'OPEN STALL', partner: 'Empty Booth Space', cat: '✨ Open for Solo or First Buddy', note: 'Available to reserve now', type: 'open' }
+      ],
+      'Fashion & Apparel': [
+        { stall: 'Stall B-04', status: '99% MATCH', partner: 'Gloss & Glam Nails', cat: '💅 Beauty & Press-On Nails', note: '✓ Clothing + Nails = Same Shopper!', type: 'match' },
+        { stall: 'Stall B-05', status: '95% MATCH', partner: 'Sol Jewelry PH', cat: '💍 Jewelry & Charms', note: '✓ Outfits + Accessories Match!', type: 'match' },
+        { stall: 'Stall B-06', status: 'UNAVAILABLE', partner: 'Isla Resort Wear', cat: '👗 Fashion & Apparel', note: '✗ Blocked: Same Apparel Category', type: 'blocked' }
+      ],
+      'General Merch & Anik-Aniks': [
+        { stall: 'Stall C-02', status: '97% MATCH', partner: 'Cozy Loops Crochet', cat: '🧶 Arts & Handmade Crafts', note: '✓ Cute Keychains + Crochet Crafts!', type: 'match' },
+        { stall: 'Stall C-03', status: '94% MATCH', partner: 'Caseify Local', cat: '📱 Phone Cases & Tech', note: '✓ Charms + Phone Cases Pair!', type: 'match' },
+        { stall: 'Stall C-04', status: 'UNAVAILABLE', partner: 'Sticker Wonderland', cat: '🎀 General Merch & Stickers', note: '✗ Blocked: Same Merch Category', type: 'blocked' }
+      ]
+    };
+
+    function filterMatcher(category) {
+      const items = MATCHER_DATA[category] || MATCHER_DATA['Beverage Only'];
+      const container = document.getElementById('matcher-results');
+      container.innerHTML = items.map(item => {
+        if (item.type === 'match') {
+          return `
+            <div class="bg-white text-slate-900 rounded-2xl p-5 shadow-md space-y-2">
+              <div class="flex justify-between text-xs font-extrabold text-rose-500"><span>${item.stall}</span><span>💖 ${item.status}</span></div>
+              <div class="text-base font-extrabold">${item.partner}</div>
+              <div class="text-xs text-slate-500">Partner Category: ${item.cat}</div>
+              <div class="text-xs font-bold text-emerald-600 pt-1">${item.note}</div>
+              <a href="#get-started" class="inline-block mt-2 bg-gradient-to-r from-rose-500 to-sky-500 text-white font-bold text-xs px-4 py-2 rounded-full">Share ${item.stall} →</a>
+            </div>
+          `;
+        } else if (item.type === 'blocked') {
+          return `
+            <div class="bg-white/15 backdrop-blur-sm border border-white/20 text-white rounded-2xl p-5 space-y-2 opacity-80">
+              <div class="flex justify-between text-xs font-bold text-rose-200"><span>${item.stall}</span><span>🚫 ${item.status}</span></div>
+              <div class="text-base font-bold">${item.partner}</div>
+              <div class="text-xs text-white/80">Partner Category: ${item.cat}</div>
+              <div class="text-xs font-semibold text-rose-200 pt-1">${item.note}</div>
+            </div>
+          `;
+        } else {
+          return `
+            <div class="bg-white/95 text-slate-900 rounded-2xl p-5 space-y-2">
+              <div class="flex justify-between text-xs font-bold text-sky-600"><span>${item.stall}</span><span>🔵 ${item.status}</span></div>
+              <div class="text-base font-bold">${item.partner}</div>
+              <div class="text-xs text-slate-500">${item.cat}</div>
+              <div class="text-xs text-slate-500 pt-1">${item.note}</div>
+              <a href="#get-started" class="inline-block mt-2 bg-sky-500 text-white font-bold text-xs px-4 py-2 rounded-full">Book ${item.stall} →</a>
+            </div>
+          `;
+        }
+      }).join('');
+    }
+
+    function updateBookingTotal() {
+      const eventSelect = document.getElementById('f-event');
+      if (!eventSelect || !eventSelect.options.length) return 0;
+      const selectedOpt = eventSelect.options[eventSelect.selectedIndex];
+      const mode = document.getElementById('f-mode').value;
+      const baseCost = mode === 'Solo Booth'
+        ? parseInt(selectedOpt.getAttribute('data-solo'), 10)
+        : parseInt(selectedOpt.getAttribute('data-buddy'), 10);
+
+      let suppliesCost = 0;
+      document.querySelectorAll('.supply-chk:checked').forEach(chk => {
+        suppliesCost += parseInt(chk.getAttribute('data-price'), 10);
+      });
+
+      const total = baseCost + suppliesCost;
+      document.getElementById('booking-total-display').textContent = '₱' + total.toLocaleString() + '.00';
+      return total;
+    }
+
+    function getComplementaryBuddy(category) {
+      if (category.includes('Beverage')) {
+        return { brand: 'Butter & Crumb Bakehouse', cat: 'Food Only (Pastries & Croissants)', contact: 'Mia Villanueva (@butterandcrumb.ph)', stall: 'Stall A-01' };
+      } else if (category.includes('Fashion')) {
+        return { brand: 'Gloss & Glam Nails', cat: 'Beauty & Press-On Nails', contact: 'Chloe Tan (@glossandglam.ph)', stall: 'Stall B-04' };
+      } else if (category.includes('Food')) {
+        return { brand: 'Brewed Awakening Coffee', cat: 'Beverage Only (Specialty Coffee)', contact: 'Liam Cruz (@brewedawakening.ph)', stall: 'Stall A-05' };
+      }
+      return { brand: 'Cozy Loops Crochet', cat: 'Arts & Handmade Crafts', contact: 'Hannah Gomez (@cozyloops.ph)', stall: 'Stall C-02' };
+    }
+
+    function submitMerchantBooking(e) {
+      e.preventDefault();
+      initStorage();
+      const brand = document.getElementById('f-brand').value;
+      const owner = document.getElementById('f-owner').value;
+      const phone = document.getElementById('f-phone').value;
+      const social = document.getElementById('f-social').value;
+      const category = document.getElementById('f-category').value;
+      const eventSelect = document.getElementById('f-event');
+      const eventTitle = eventSelect.options[eventSelect.selectedIndex].text;
+      const mode = document.getElementById('f-mode').value;
+      const total = updateBookingTotal();
+
+      const supplies = [];
+      document.querySelectorAll('.supply-chk:checked').forEach(chk => supplies.push(chk.value));
+
+      const buddyInfo = getComplementaryBuddy(category);
+
+      const newBooking = {
+        id: 'BB-2026-' + Math.floor(100 + Math.random() * 900),
+        brand,
+        owner,
+        phone,
+        social,
+        category,
+        eventTitle,
+        mode,
+        stall: mode === 'Solo Booth' ? 'Stall S-04 (Solo)' : buddyInfo.stall,
+        supplies,
+        total,
+        status: 'Pending Admin Review',
+        buddyBrand: mode === 'Solo Booth' ? 'Solo Booth (Full Space for Your Brand)' : buddyInfo.brand,
+        buddyCategory: mode === 'Solo Booth' ? 'Solo Stall' : buddyInfo.cat,
+        buddyContact: mode === 'Solo Booth' ? 'N/A' : buddyInfo.contact
+      };
+
+      const bookings = JSON.parse(localStorage.getItem('bb_clean_bookings'));
+      bookings.unshift(newBooking);
+      localStorage.setItem('bb_clean_bookings', JSON.stringify(bookings));
+
+      openMyBookingModal();
+    }
+
+    function openMyBookingModal() {
+      initStorage();
+      const bookings = JSON.parse(localStorage.getItem('bb_clean_bookings'));
+      const latest = bookings[0];
+      const modal = document.getElementById('booking-modal');
+      const content = document.getElementById('modal-booking-content');
+
+      content.innerHTML = `
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-1.5">
+          <div class="flex justify-between"><span>Booking Reference:</span><strong>${latest.id}</strong></div>
+          <div class="flex justify-between"><span>Event:</span><strong>${latest.eventTitle}</strong></div>
+          <div class="flex justify-between"><span>Assigned Booth:</span><strong class="text-rose-600">${latest.stall} (${latest.mode})</strong></div>
+          <div class="flex justify-between"><span>Reserved Booth Supplies:</span><strong>${latest.supplies.join(', ') || 'None'}</strong></div>
+          <div class="flex justify-between"><span>Total Amount:</span><strong class="text-sky-600">₱${latest.total.toLocaleString()}.00</strong></div>
+          <div class="flex justify-between"><span>Status:</span><strong class="bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">${latest.status}</strong></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-2xl bg-rose-50/70 border border-rose-200 space-y-1">
+            <span class="text-[10px] font-bold uppercase text-rose-600">Your Brand (Left Side)</span>
+            <h4 class="text-base font-extrabold text-slate-900">${latest.brand}</h4>
+            <p class="text-slate-600">${latest.category}</p>
+            <p class="text-slate-500">Contact: ${latest.owner} (${latest.social})</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-sky-50/70 border-2 border-sky-400 space-y-1">
+            <span class="text-[10px] font-bold uppercase text-sky-700">🤝 Your Matched Booth Buddy (Right Side)</span>
+            <h4 class="text-base font-extrabold text-slate-900">${latest.buddyBrand}</h4>
+            <p class="text-slate-600">${latest.buddyCategory}</p>
+            <p class="text-sky-800 font-semibold">Contact: ${latest.buddyContact}</p>
+          </div>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeMyBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderLiveEvents();
+      filterMatcher('Beverage Only');
+    });
+  </script>
+</body>
+</html>
